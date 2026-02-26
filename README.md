@@ -1,0 +1,26 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# htmxr.bootstrap <img src="man/figures/logo.png" align="right" height="138" alt="" />
+
+<!-- badges: start -->
+
+![hyperverse](https://img.shields.io/badge/hyperverse-232323)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-CHECK](https://github.com/hyperverse-r/htmxr.bootstrap/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hyperverse-r/htmxr.bootstrap/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/hyperverse-r/htmxr.bootstrap/graph/badge.svg)](https://app.codecov.io/gh/hyperverse-r/htmxr.bootstrap)
+<!-- badges: end -->
+
+> Opinionated Bootstrap 5 components for htmxr — build interactive R web
+> applications with ready-to-use Bootstrap UI primitives
+
+## Installation
+
+## Code of Conduct
+
+Please note that the htmxr.bootstrap project is released with a
+[Contributor Code of
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
