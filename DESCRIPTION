@@ -1,0 +1,25 @@
+Package: htmxr.bootstrap
+Title: Opinionated Bootstrap 5 Components for 'htmxr'
+Version: 0.0.0.9000
+Authors@R:
+    person("Arthur", "Bréant", , "arthur@thinkr.fr", role = c("aut", "cre"))
+Description: A Bootstrap 5 layer on top of 'htmxr'. Provides ready-to-use
+    UI components — buttons, inputs, containers, cards, and more — with
+    Bootstrap classes applied automatically. Part of the hyperverse
+    ecosystem.
+License: MIT + file LICENSE
+URL: https://hyperverse-r.github.io/htmxr.bootstrap/,
+    https://github.com/hyperverse-r/htmxr.bootstrap
+BugReports: https://github.com/hyperverse-r/htmxr.bootstrap/issues
+Depends:
+    R (>= 4.1.0)
+Imports:
+    htmltools,
+    htmxr,
+    plumber2
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
