@@ -1,0 +1,31 @@
+# htmxr.bootstrap
+
+> Opinionated Bootstrap 5 components for htmxr — build interactive R web
+> applications with ready-to-use Bootstrap UI primitives
+
+## Installation
+
+## Code of Conduct
+
+Please note that the htmxr.bootstrap project is released with a
+[Contributor Code of
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
+
+# Package index
+
+## All functions
+
+- [`hx_bs_button()`](https://hyperverse-r.github.io/htmxr.bootstrap/reference/hx_bs_button.md)
+  [`bs_button()`](https://hyperverse-r.github.io/htmxr.bootstrap/reference/hx_bs_button.md)
+  : Bootstrap Button
+- [`hx_bs_page()`](https://hyperverse-r.github.io/htmxr.bootstrap/reference/hx_bs_page.md)
+  [`bs_page()`](https://hyperverse-r.github.io/htmxr.bootstrap/reference/hx_bs_page.md)
+  : Generate a complete HTML page with htmx and Bootstrap 5
+- [`hx_bs_run_example()`](https://hyperverse-r.github.io/htmxr.bootstrap/reference/hx_bs_run_example.md)
+  [`bs_run_example()`](https://hyperverse-r.github.io/htmxr.bootstrap/reference/hx_bs_run_example.md)
+  : Run an htmxr.bootstrap example
+- [`hx_bs_serve_assets()`](https://hyperverse-r.github.io/htmxr.bootstrap/reference/hx_bs_serve_assets.md)
+  [`bs_serve_assets()`](https://hyperverse-r.github.io/htmxr.bootstrap/reference/hx_bs_serve_assets.md)
+  : Serve htmxr.bootstrap static assets
+
