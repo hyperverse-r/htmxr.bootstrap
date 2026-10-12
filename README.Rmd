@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# htmxr.bootstrap <img src="man/figures/logo.png" align="right" height="138" alt="" />
+# htmxr.bootstrap <a href="https://hyperverse-r.github.io/htmxr.bootstrap/"><img src="man/figures/logo.png" align="right" height="138" alt="htmxr.bootstrap website" /></a>
 
 <!-- badges: start -->
 ![hyperverse](https://img.shields.io/badge/hyperverse-232323)
@@ -22,12 +22,114 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/hyperverse-r/htmxr.bootstrap/graph/badge.svg)](https://app.codecov.io/gh/hyperverse-r/htmxr.bootstrap)
 <!-- badges: end -->
 
-> Opinionated Bootstrap 5 components for htmxr — build interactive R web applications with ready-to-use Bootstrap UI primitives
+> Bootstrap 5 components for htmxr — no CSS knowledge required.
+
+**Documentation:** [hyperverse.world](https://hyperverse.world)
+
+`{htmxr.bootstrap}` is an opinionated layer on top of [`{htmxr}`](https://github.com/hyperverse-r/htmxr).
+It wraps each `{htmxr}` primitive with Bootstrap 5 classes applied automatically —
+buttons, pages, inputs — so you get a polished UI without writing a single CSS class.
 
 ## Installation
 
+```r
+pak::pak("hyperverse-r/htmxr.bootstrap")
+```
 
+## Example — Hello, Bootstrap!
+
+The `hello` example ships with `{htmxr.bootstrap}`. It shows a page with
+Bootstrap buttons that trigger an htmx request and update the DOM.
+
+### The page
+
+`hx_bs_page()` builds a complete HTML page with Bootstrap CSS and JS already
+injected. `hx_bs_button()` generates a `<button>` with the right Bootstrap
+variant classes and htmx attributes.
+
+```r
+#* @get /
+#* @parser none
+#* @serializer html
+function() {
+  hx_bs_page(
+    hx_head(title = "Hello, Bootstrap!"),
+    tags$div(
+      class = "container py-5",
+      tags$h1(class = "mb-4", "Hello, Bootstrap!"),
+      tags$p(class = "text-muted mb-4", "Click a button to greet the server."),
+      tags$div(
+        class = "d-flex gap-2 mb-4",
+        hx_bs_button(
+          "Say hello",
+          variant = "warning",
+          get = "/greet",
+          target = "#result",
+          swap = "innerHTML"
+        ),
+        hx_bs_button(
+          "Say hello (outline)",
+          variant = "secondary",
+          outline = TRUE,
+          get = "/greet",
+          target = "#result",
+          swap = "innerHTML"
+        ),
+        hx_bs_button(
+          "Say hello (primary)",
+          variant = "primary",
+          get = "/greet",
+          target = "#result",
+          swap = "innerHTML"
+        ),
+        hx_bs_button("Disabled", variant = "danger", disabled = TRUE)
+      ),
+      tags$div(id = "result", class = "alert alert-light border")
+    )
+  )
+}
+```
+
+### The endpoint
+
+```r
+#* @get /greet
+#* @parser none
+#* @serializer none
+function() {
+  tags$span(paste("Hello from the server!", format(Sys.time(), "%H:%M:%S")))
+}
+```
+
+### Run it
+
+```r
+hx_bs_run_example("hello")
+```
+
+## Design philosophy
+
+`{htmxr.bootstrap}` is built around a few explicit choices:
+
+- **Opinionated by design** — Bootstrap classes are applied automatically.
+  You pick a `variant`, a `size`, a state — the right classes follow.
+  You never need to know that `"btn btn-outline-danger btn-sm"` is the correct string.
+
+- **One function per component** — `hx_bs_button()`, `hx_bs_page()`, etc.
+  map directly to Bootstrap components. No configuration objects, no theming system to learn.
+
+- **Built on `{htmxr}`** — Every `hx_bs_*` function delegates to the corresponding
+  `{htmxr}` primitive. All htmx attributes (`get`, `post`, `target`, `swap`, …) are
+  passed through unchanged.
+
+- **Bootstrap bundled locally** — Bootstrap 5.3.8 CSS and JS are included in the
+  package under `inst/`. No CDN dependency at runtime.
+
+- **Short aliases** — Every function has a `bs_*` alias (`bs_button`, `bs_page`, …)
+  for users who prefer concise code.
 
 ## Code of Conduct
 
-Please note that the htmxr.bootstrap project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+Please note that the htmxr.bootstrap project is released with a
+[Contributor Code of Conduct](https://hyperverse-r.github.io/htmxr.bootstrap/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

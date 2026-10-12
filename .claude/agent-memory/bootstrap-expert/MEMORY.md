@@ -21,3 +21,4 @@ See `patterns.md` for detailed component notes.
 ## Components audited
 
 - `hx_bs_button()` — see `patterns.md#button`
+- `hx_bs_theme()` + `hx_bs_page()` — see `patterns.md#theme`

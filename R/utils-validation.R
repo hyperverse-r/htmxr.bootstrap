@@ -10,3 +10,15 @@
 check_arg_or_null <- function(arg, choices) {
   if (is.null(arg)) NULL else match.arg(arg, choices)
 }
+
+# check_bool_or_null ------------------------------------------------------------
+# Validates a logical argument: NULL → pass-through; TRUE/FALSE → pass-through;
+# NA, strings, integers, etc. → stop().
+# Usage:
+#   enable_rounded <- check_bool_or_null(enable_rounded)
+check_bool_or_null <- function(x, arg = deparse(substitute(x))) {
+  if (is.null(x)) return(invisible(NULL))
+  if (!is.logical(x) || length(x) != 1 || is.na(x))
+    stop(sprintf("`%s` must be TRUE or FALSE (not NA).", arg), call. = FALSE)
+  invisible(x)
+}

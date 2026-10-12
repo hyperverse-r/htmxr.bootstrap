@@ -13,3 +13,5 @@
 ^\.lintr$
 ^CLAUDE\.md$
 ^\.claude
+^.*\.Rproj$
+^\.Rproj\.user$

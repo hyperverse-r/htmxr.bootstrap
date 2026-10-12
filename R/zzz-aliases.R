@@ -2,6 +2,10 @@
 #' @export
 bs_button <- hx_bs_button
 
+#' @rdname hx_bs_theme
+#' @export
+bs_theme <- hx_bs_theme
+
 #' @rdname hx_bs_page
 #' @export
 bs_page <- hx_bs_page

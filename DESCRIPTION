@@ -16,7 +16,8 @@ Depends:
 Imports:
     htmltools,
     htmxr,
-    plumber2
+    plumber2,
+    sass
 Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

@@ -31,7 +31,14 @@ function() {
           target = "#result",
           swap = "innerHTML"
         ),
-        hx_bs_button("Disabled", disabled = TRUE)
+        hx_bs_button(
+          "Say hello (primary)",
+          variant = "primary",
+          get = "/greet",
+          target = "#result",
+          swap = "innerHTML"
+        ),
+        hx_bs_button("Disabled", variant = "danger", disabled = TRUE)
       ),
       tags$div(id = "result", class = "alert alert-light border")
     )
